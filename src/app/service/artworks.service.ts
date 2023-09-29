@@ -14,17 +14,12 @@ export class ArtworksService {
 
   constructor(private http: HttpClient) { }
 
-  getHomepage(): Observable<any> {
-    const url = `${this.baseApiUrl}?${this.searchFilters}`
-    return this.http.get<Artwork[]>(url);
-  }
-
   getById(id: number): Observable<Artwork> {
     const url = `${this.baseApiUrl}/${id}?${this.searchFilters}`
     return this.http.get<Artwork>(url);
   }
 
-  getSearchResults(keyword: string): Observable<any> {
+  getSearchResults(keyword: string | null): Observable<any> {
     const url = `${this.baseApiUrl}/search?q=${keyword}&${this.searchFilters}`
     return this.http.get<Artwork[]>(url);
   }

@@ -10,11 +10,6 @@ import { ArtworksService } from 'src/app/service/artworks.service';
 })
 export class HomeComponent {
 
-  public list: Artwork[] = []
+  public environment: string = 'home';
 
-  constructor(public service: ArtworksService) { }
-
-  ngOnInit(): void {
-    this.service.getHomepage().subscribe((res) => this.list = res.data);
-  }
 }

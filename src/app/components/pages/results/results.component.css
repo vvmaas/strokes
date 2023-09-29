@@ -1,0 +1,42 @@
+.container {
+    width: 100vw;
+    max-width: 1280px;
+}
+
+.topbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 7;
+    height: 80px;
+    width: 100vw;
+    background-color: rgba(64, 40, 36, .8);
+    backdrop-filter: blur(2px);
+}
+
+.topbar {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding-top: 60px;
+}
+
+.logo {
+    line-height: 1.2;
+    letter-spacing: 4px;
+    padding-left: 4px;
+    filter: drop-shadow(-4px -4px 4px #0000004a);
+    font-family: 'Knewave', sans-serif;
+    font-size: max(24px, min(4vw, 20px));
+    background: radial-gradient(rgb(254,192,79),rgba(254,192,79, 0.75));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}

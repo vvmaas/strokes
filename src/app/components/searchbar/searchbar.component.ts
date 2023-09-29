@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./searchbar.component.css']
 })
 export class SearchbarComponent {
+  @Input() environment = '';
+  @Output() newSearch = new EventEmitter<string>();
 
   public search: string = '';
 
@@ -27,6 +29,8 @@ export class SearchbarComponent {
     }
 
     this.router.navigate([`/search/${this.search}`])
+    this.newSearch.emit(this.search)
+    this.applyForm.reset();
   }
 
 }
