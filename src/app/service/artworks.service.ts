@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ArtworksService {
   private baseApiUrl = environment.baseApiUrl;
-  private searchFilters = "fields=id,title,artist_display,description,date_display,main_reference_number"
+  private searchFilters = "fields=id,title,artist_display,description,date_display,main_reference_number,thumbnail"
 
   constructor(private http: HttpClient) { }
 

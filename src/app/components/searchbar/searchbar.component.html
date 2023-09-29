@@ -1,0 +1,8 @@
+<div class="container">
+    <form [formGroup]="applyForm" (submit)="submitSearch()">
+        <input id="search" type="text" placeholder="What do you want to see?" formControlName="search">
+        <button type="submit">
+            <mat-icon class="icon" aria-hidden="false" aria-label="Example home icon" fontIcon="search"></mat-icon>
+        </button>
+    </form>
+</div>
