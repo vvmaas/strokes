@@ -1,0 +1,11 @@
+<div class="image">
+    <img src={{image}} alt={{item?.thumbnail?.alt_text}}>
+</div>
+<div class="info">
+    <p>{{item?.title}}, {{item?.date_display}}</p>
+    <p *ngIf="item?.artist_title" [innerHtml]="item?.artist_title"></p>
+    <p *ngIf="!item?.artist_title">Unknown artist</p>
+</div>
+
+
+

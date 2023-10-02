@@ -13,7 +13,7 @@ import { Artwork } from 'src/app/models/Artwork';
 export class ResultsComponent {
 
   public search: string | null = '';
-  public list: Artwork[] = [];
+  public list: any = [];
   public environment: string = 'results';
 
   constructor(private route: ActivatedRoute, private router: Router, private service: ArtworksService) { }
@@ -21,14 +21,15 @@ export class ResultsComponent {
   ngOnInit(): void {
     this.router.events.subscribe(() => {
       this.search = this.route.snapshot.paramMap.get('search');
-      this.service.getSearchResults(this.search).subscribe(res => this.list = res.data);
+      this.service.getSearchResults(this.search).subscribe(res => this.list = res);
+      
     });
   }
 
   refetch(search: string) {
     this.list = [];
     this.search = search;
-    this.service.getSearchResults(this.search).subscribe(res => this.list = res.data);
+    this.service.getSearchResults(this.search).subscribe(res => this.list = res);
   }
 
   goHome() {

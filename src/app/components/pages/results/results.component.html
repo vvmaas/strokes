@@ -7,10 +7,14 @@
             <app-searchbar (newSearch)="refetch($event)" [environment]="environment"></app-searchbar>
         </div>
     </div>
-    SHOWING RESULTS FOR {{this.search}}
-    <div class="results-list">
-        <div *ngFor="let item of list" class="result-card">
-            {{item.title}}
+    <div class="body">
+        <div class="keyword">
+            showing search results for: <strong>{{this.search}}</strong>
+        </div>
+        <div class="results-list">
+            <div *ngFor="let item of list.data" class="result-card">
+                <app-result-card [item]="item" [config]="list.config"></app-result-card>
+            </div>
         </div>
     </div>
 </div>

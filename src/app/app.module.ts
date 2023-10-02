@@ -10,13 +10,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultsComponent } from './components/pages/results/results.component';
+import { ResultCardComponent } from './components/result-card/result-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchbarComponent,
-    ResultsComponent
+    ResultsComponent,
+    ResultCardComponent
   ],
   imports: [
     BrowserModule,
