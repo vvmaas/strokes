@@ -1,0 +1,8 @@
+main {
+    width: 100vw;
+    height: fit-content;
+    max-width: 1440px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}

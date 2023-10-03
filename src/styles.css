@@ -85,6 +85,8 @@ button{
 html, body { height: 100%; }
 body { 
     background: radial-gradient(rgb(77, 44, 38) 5%, rgb(64, 40, 36) 50%);
+	display: flex;
+	justify-content: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

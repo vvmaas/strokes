@@ -1,0 +1,21 @@
+<app-topbar></app-topbar>
+<div class="body">
+    <mat-icon class="return-icon" (click)="goBack()">arrow_back</mat-icon>
+    <app-loading-artwork *ngIf="!item"></app-loading-artwork>
+    <div *ngIf="item" class="artwork">
+        <div class="image-space">
+            <img src={{item.thumbnail.lqip}} alt="" srcset={{image}}>
+        </div>
+        <div class="info">
+            <div class="line"></div>
+            <div class="info-main">
+                <p class="title">{{item.title}}</p>
+                <p *ngIf="item?.date_display" class="date-display">{{item?.date_display}}</p>
+                <span class="artist-display" [innerHTML]="item.artist_display"></span>
+            </div>
+            <div class="data">
+                <p *ngIf="item.description" class="description" [innerHTML]="item.description"></p>
+            </div>
+        </div>
+    </div>
+</div>

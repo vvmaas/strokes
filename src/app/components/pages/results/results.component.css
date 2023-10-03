@@ -3,87 +3,47 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 110px auto;
-    width: 100vw;
+    margin: 11vh auto;
+    width: 100%;
     height: fit-content;
     min-height: 100vh;
-    max-width: 1280px;
     overflow: scroll;
-}
-
-.topbar-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 7;
-    height: fit-content;
-    width: 100vw;
-    background-color: rgba(64, 40, 36, .8);
-    backdrop-filter: blur(2px);
-}
-
-.topbar {
-    width: 100%;
-    max-width: 1280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.logo {
-    line-height: 1.2;
-    letter-spacing: 4px;
-    padding-left: 4px;
-    filter: drop-shadow(-4px -4px 4px #0000004a);
-    font-family: 'Knewave', sans-serif;
-    font-size: max(28px, min(4vw, 24px));
-    background: radial-gradient(rgb(254,192,79),rgba(254,192,79, 0.75));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-}
-
-.body {
-    width: 100vw;
-    height: fit-content;
-    max-width: 1280px;
-    overflow: scroll;
-    display: flex;
-    flex-direction: column;
 }
 
 .keyword {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     color: rgb(244,215,175);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .keyword strong {
     color: rgb(254,192,79);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .results-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
     width: 100%;
     overflow: scroll;
 }
 
 .result-card {
-    width: 31%;
+    width: 23%;
     height: fit-content;
-    margin-bottom: 25px;
+    margin-top: 25px;
     background-color: rgb(244,215,175);
     border-radius: 2px;
     padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.result-card:hover {
+    filter: opacity(0.8);
+    filter: brightness(1.08);
+    width: 25%;
+    height: 102%;
+    font-size: 22px;
 }

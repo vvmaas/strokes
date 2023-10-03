@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="environment" class="container">
     <form [formGroup]="applyForm" (submit)="submitSearch()" autocomplete="off">
         <input *ngIf="environment == 'home'" id="search" type="text" placeholder="What do you want to see?" formControlName="search">
         <input *ngIf="environment !== 'home'" id="search" type="text" placeholder="What else do you want to see?" formControlName="search">

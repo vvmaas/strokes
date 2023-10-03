@@ -1,0 +1,85 @@
+.body {
+    background-color: rgb(52, 32, 29);
+    border-radius: 10px;
+    margin: 11vh 0;
+    padding: 3vh;
+}
+
+.return-icon {
+    width: fit-content;
+    height: 3vh;
+    margin: 1vh;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(254, 192, 79);
+    cursor: pointer;
+    filter: drop-shadow(-5px -5px 3px #00000025);
+}
+
+.return-icon:hover {
+    color: rgba(254, 192, 79, 0.85);
+}
+
+.image-space {
+    width: 100%;
+    height: 81vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.artwork img {
+    max-height: 70vh;
+    margin-bottom: 7vh;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: rgb(21, 13, 12);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(244, 215, 175);
+}
+
+.date-display {
+    margin: 20px 0;
+}
+
+.artist-display, .date-display {
+    white-space: pre-line;
+    color: rgba(244, 215, 175, 0.8);
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.info {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-main {
+    width: 100%;
+}
+
+.data {
+    margin-top: 40px;
+}
+
+.description {
+    color: rgba(244, 215, 175, 1);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.04rem;
+    width: 80%;
+}

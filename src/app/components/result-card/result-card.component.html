@@ -1,10 +1,10 @@
 <div class="image">
-    <img src={{image}} alt={{item?.thumbnail?.alt_text}}>
+    <img src={{item?.thumbnail?.lqip}} alt={{item?.thumbnail?.alt_text}} srcset={{image}}>
 </div>
 <div class="info">
-    <p>{{item?.title}}, {{item?.date_display}}</p>
-    <p *ngIf="item?.artist_title" [innerHtml]="item?.artist_title"></p>
-    <p *ngIf="!item?.artist_title">Unknown artist</p>
+    <p *ngIf="item?.date_display" class="title">{{item?.title}}, {{item?.date_display}}</p>
+    <p *ngIf="!item?.date_display" class="title">{{item?.title}}</p>
+    <p *ngIf="item?.artist_title" [innerHtml]="item?.artist_title" class="author"></p>
 </div>
 
 

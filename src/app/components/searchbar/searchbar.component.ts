@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SearchbarComponent {
   @Input() environment = '';
-  @Output() newSearch = new EventEmitter<string>();
+  @Input() newSearch = new EventEmitter<string>();
 
   public search: string = '';
 

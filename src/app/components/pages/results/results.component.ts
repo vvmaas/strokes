@@ -13,8 +13,7 @@ import { Artwork } from 'src/app/models/Artwork';
 export class ResultsComponent {
 
   public search: string | null = '';
-  public list: any = [];
-  public environment: string = 'results';
+  public list: any = null;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: ArtworksService) { }
 
@@ -22,17 +21,16 @@ export class ResultsComponent {
     this.router.events.subscribe(() => {
       this.search = this.route.snapshot.paramMap.get('search');
       this.service.getSearchResults(this.search).subscribe(res => this.list = res);
-      
     });
   }
 
   refetch(search: string) {
-    this.list = [];
+    this.list = null;
+    this.service.getSearchResults(search).subscribe(res => this.list = res);
     this.search = search;
-    this.service.getSearchResults(this.search).subscribe(res => this.list = res);
   }
 
-  goHome() {
-    this.router.navigate(['/'])
+  goToArtwork(id: number) {
+    this.router.navigate([`/artwork/${id}`])
   }
 }

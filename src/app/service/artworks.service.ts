@@ -10,13 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class ArtworksService {
   private baseApiUrl = environment.baseApiUrl;
-  private searchFilters = "fields=id,title,artist_title,description,date_display,main_reference_number,thumbnail,config,image_id&limit=21"
+  private searchFilters = "fields=id,title,artist_title,description,date_display,main_reference_number,thumbnail,config,image_id&limit=24"
 
   constructor(private http: HttpClient) { }
 
-  getById(id: number): Observable<Artwork> {
-    const url = `${this.baseApiUrl}/${id}?${this.searchFilters}`
-    return this.http.get<Artwork>(url);
+  getById(id: number): Observable<any> {
+    const url = `${this.baseApiUrl}/${id}`
+    return this.http.get<any>(url);
   }
 
   getSearchResults(keyword: string | null): Observable<any> {

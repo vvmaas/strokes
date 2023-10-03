@@ -11,6 +11,10 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultsComponent } from './components/pages/results/results.component';
 import { ResultCardComponent } from './components/result-card/result-card.component';
+import { ArtworkComponent } from './components/pages/artwork/artwork.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { LoadingArtworkComponent } from './components/loading-artwork/loading-artwork.component';
+import { LoadingResultsComponent } from './components/loading-results/loading-results.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
     HomeComponent,
     SearchbarComponent,
     ResultsComponent,
-    ResultCardComponent
+    ResultCardComponent,
+    ArtworkComponent,
+    TopbarComponent,
+    LoadingArtworkComponent,
+    LoadingResultsComponent
   ],
   imports: [
     BrowserModule,

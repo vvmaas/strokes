@@ -1,20 +1,12 @@
 <div class="container">
-    <div class="topbar-wrapper">
-        <div class="topbar">
-            <div (click)="goHome()" class="logo">
-                strokes
-            </div>
-            <app-searchbar (newSearch)="refetch($event)" [environment]="environment"></app-searchbar>
-        </div>
+    <app-topbar (newSearch)="refetch($event)"></app-topbar>
+    <div class="keyword">
+        showing search results for: <strong>{{this.search}}</strong>
     </div>
-    <div class="body">
-        <div class="keyword">
-            showing search results for: <strong>{{this.search}}</strong>
-        </div>
-        <div class="results-list">
-            <div *ngFor="let item of list.data" class="result-card">
-                <app-result-card [item]="item" [config]="list.config"></app-result-card>
-            </div>
+    <app-loading-results *ngIf="this.list == null"></app-loading-results>
+    <div class="results-list">
+        <div *ngFor="let item of list.data" class="result-card">
+            <app-result-card [item]="item" [config]="list.config" (click)="goToArtwork(item.id)"></app-result-card>
         </div>
     </div>
 </div>

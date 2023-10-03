@@ -1,0 +1,66 @@
+.image-space {
+    width: 100%;
+    height: 81vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-image {
+    max-height: 70vh;
+    margin-bottom: 7vh;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: rgb(21, 13, 12);
+}
+
+.loading-title {
+    height: 2rem;
+    width: 40%;
+    background-color: rgba(244, 215, 175, 0.8);
+    border-radius: 50px;
+}
+
+.loading-date {
+    margin: 20px 0;
+    width: 10%;
+}
+
+.loading-artist, .loading-date {
+    background-color: rgba(244, 215, 175, 0.6);
+    height: 1.05rem;
+    border-radius: 50px;
+}
+
+.loading-artist {
+    width: 15%;
+    margin-top: 10px;
+}
+
+.info {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-main {
+    width: 100%;
+}
+
+.data {
+    margin-top: 40px;
+}
+
+.description {
+    color: rgba(244, 215, 175, 1);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.04rem;
+}
