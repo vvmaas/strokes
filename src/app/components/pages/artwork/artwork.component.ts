@@ -28,7 +28,6 @@ export class ArtworkComponent {
         this.item = res.data; 
         this.config = res.config; 
         this.image = this.imageService.getImage(this.config, this.item);
-        console.log(this.item);
       });
     });
   }

@@ -3,11 +3,11 @@
     <mat-icon class="return-icon" (click)="goBack()">arrow_back</mat-icon>
     <app-loading-artwork *ngIf="!item"></app-loading-artwork>
     <div *ngIf="item" class="artwork">
-        <div class="image-space">
-            <img src={{item.thumbnail.lqip}} alt="" srcset={{image}}>
+        <div *ngIf="image !== ''" class="image-space">
+            <img src={{item.thumbnail?.lqip}} alt="" srcset={{image}}>
         </div>
         <div class="info">
-            <div class="line"></div>
+            <div *ngIf="item.thumbnail && image !== ''" class="line"></div>
             <div class="info-main">
                 <p class="title">{{item.title}}</p>
                 <p *ngIf="item?.date_display" class="date-display">{{item?.date_display}}</p>

@@ -42,8 +42,7 @@
 
 .result-card:hover {
     filter: opacity(0.8);
-    filter: brightness(1.08);
+    filter: brightness(1.01);
     width: 25%;
-    height: 102%;
-    font-size: 22px;
+    font-size: 22.5px;
 }

@@ -2,6 +2,28 @@
     width: 100%;
 }
 
+.filler-img {
+    width: 100%;
+    background-color: rgb(255, 230, 195);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh 0;
+    aspect-ratio: 4/3;
+}
+
+.filler-icon {
+    width: fit-content;
+    height: 3rem;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh 0;
+    line-height: 50px;
+    color: rgb(64, 40, 36, 0.95);
+}
+
 .title {
     margin-top: 10px;
     color: rgba(64, 40, 36, 0.95);
