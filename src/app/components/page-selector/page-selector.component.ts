@@ -17,7 +17,6 @@ export class PageSelectorComponent implements OnChanges {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.pages=[]
     this.buildArr();
     console.log(this.pages);
   }
@@ -27,7 +26,6 @@ export class PageSelectorComponent implements OnChanges {
   }
 
   goToPage(page: number) {
-    this.pages = [];
     const queryParams = {
       page
     }
@@ -35,6 +33,7 @@ export class PageSelectorComponent implements OnChanges {
   }
 
   buildArr() {
+    this.pages=[]
     for (let i = 1; i <= this.pageTotal; i++) {
       if(i==this.page) {
         this.pages.push({ page: i, class: 'selected' })
