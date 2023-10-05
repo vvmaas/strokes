@@ -23,5 +23,4 @@ export class ArtworksService {
     const url = `${this.baseApiUrl}/search?q=${keyword}&${this.searchFilters}&page=${page}`
     return this.http.get<Artwork[]>(url);
   }
-
 }

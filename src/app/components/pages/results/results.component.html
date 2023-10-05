@@ -1,6 +1,7 @@
 <div class="container">
     <app-topbar (newSearch)="refetch($event)"></app-topbar>
-    <div class="keyword">
+    <app-no-results *ngIf="noResults" class="no-results"></app-no-results>
+    <div *ngIf="!noResults" class="keyword">
         showing search results for: <strong>{{this.search}}</strong>
     </div>
     <app-loading-results *ngIf="loading"></app-loading-results>

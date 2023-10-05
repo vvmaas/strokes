@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="pageTotal > 1" class="container">
     <div *ngFor="let item of pages">
         <div *ngIf="item.class == 'selected'" class={{item.class}} (click)="goToPage(item.page)">
             {{item.page}}

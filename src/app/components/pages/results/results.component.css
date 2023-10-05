@@ -11,6 +11,10 @@
     overflow: scroll;
 }
 
+.no-results {
+    width: 100%;
+}
+
 .keyword {
     margin-bottom: 5px;
     color: rgb(244,215,175);

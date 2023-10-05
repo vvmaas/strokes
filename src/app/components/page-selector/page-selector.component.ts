@@ -17,8 +17,8 @@ export class PageSelectorComponent implements OnChanges {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    if(this.pageTotal > 25) this.pageTotal = 25;
     this.buildArr();
-    console.log(this.pages);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

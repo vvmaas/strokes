@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -16,6 +16,7 @@ export class ResultsComponent {
   public search: string | null = '';
   public currentPage: number = 0;
   public list: any = [];
+  public noResults: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: ArtworksService) { }
 
@@ -25,27 +26,29 @@ export class ResultsComponent {
       }
     );
     this.loading = true;
+    this.fetch();
+  }
+
+  fetch(){
     this.router.events.subscribe(() => {
       this.search = this.route.snapshot.paramMap.get('search');
-      this.service.getSearchResults(this.search, this.currentPage).subscribe(res => {this.list = res; this.loading = false; console.log(res);
-       });
-    });    
+      this.service.getSearchResults(this.search, this.currentPage)
+        .subscribe({
+              next: (v) => {this.list = v; if(!v.data[0]) { this.noResults = true } else { this.noResults = false }; this.loading = false;},
+              error: (e) => {this.noResults = true; this.loading = false;}
+            }
+          );
+    }); 
   }
 
   refetch(search: string) {
     this.service.getSearchResults(search).subscribe(res => {
+      if(!res.data[0]) { this.noResults = true } else { this.noResults = false }
       this.loading = true;
       this.list = res;
       this.search = search;
-      this.loading = false 
+      this.loading = false;
     });
-  }
-
-  goToPage(page: number) {
-    const queryParams = {
-      page
-    }
-    this.router.navigate([`/search/${this.search}`], { queryParams })
   }
 
   goToArtwork(id: number) {
