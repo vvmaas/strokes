@@ -15,6 +15,7 @@ import { ArtworkComponent } from './components/pages/artwork/artwork.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { LoadingArtworkComponent } from './components/loading-artwork/loading-artwork.component';
 import { LoadingResultsComponent } from './components/loading-results/loading-results.component';
+import { PageSelectorComponent } from './components/page-selector/page-selector.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoadingResultsComponent } from './components/loading-results/loading-re
     ArtworkComponent,
     TopbarComponent,
     LoadingArtworkComponent,
-    LoadingResultsComponent
+    LoadingResultsComponent,
+    PageSelectorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.fill, .selected, .page {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(64, 40, 36, 0.95);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-left: 1px solid rgba(236, 208, 166, 0.7);
+    border-right: 1px solid rgba(236, 208, 166, 0.7);
+}
+
+.selected, .page {
+    cursor: pointer;
+}
+
+.fill, .page {
+    background-color: rgb(255, 230, 195);
+}
+
+.fill {
+    cursor: default;
+}
+
+.selected {
+    background-color:rgb(255, 230, 195);
+    border-top: 7px solid rgba(254, 192, 79, 0.95);
+    z-index: 3;
+    padding-bottom: 7px;
+}
+
+.page:hover, .selected:hover {
+    background-color: rgb(255, 230, 195, 0.9);
+}
+
+.page:active, .selected:active {
+    background-color: rgba(255, 230, 195, 0.70);
+}

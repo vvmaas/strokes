@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngFor="let item of pages">
+        <div *ngIf="item.class == 'selected'" class={{item.class}} (click)="goToPage(item.page)">
+            {{item.page}}
+        </div>
+        <div *ngIf="item.class == 'page'" class={{item.class}} (click)="goToPage(item.page)">
+            {{item.page}}
+        </div>
+        <div *ngIf="item.class == 'fill'" class={{item.class}}>
+            {{item.page}}
+        </div>
+    </div>
+</div>
+

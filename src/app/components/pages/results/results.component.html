@@ -9,4 +9,5 @@
             <app-result-card [item]="item" [config]="list.config" (click)="goToArtwork(item.id)"></app-result-card>
         </div>
     </div>
+    <app-page-selector class="page-selector" *ngIf="list.pagination" [search]="search" [page]="currentPage" [pageTotal]="list.pagination.total_pages"></app-page-selector>
 </div>

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ArtworksService {
   private baseApiUrl = environment.baseApiUrl;
-  private searchFilters = "fields=id,title,artist_title,description,date_display,main_reference_number,thumbnail,config,image_id&limit=24"
+  private searchFilters = "fields=id,title,artist_title,description,date_display,main_reference_number,thumbnail,config,image_id&limit=40"
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +19,8 @@ export class ArtworksService {
     return this.http.get<any>(url);
   }
 
-  getSearchResults(keyword: string | null): Observable<any> {
-    const url = `${this.baseApiUrl}/search?q=${keyword}&${this.searchFilters}`
+  getSearchResults(keyword: string | null, page: number = 1): Observable<any> {
+    const url = `${this.baseApiUrl}/search?q=${keyword}&${this.searchFilters}&page=${page}`
     return this.http.get<Artwork[]>(url);
   }
 

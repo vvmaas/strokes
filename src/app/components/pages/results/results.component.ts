@@ -14,15 +14,21 @@ export class ResultsComponent {
 
   public loading: boolean = true;
   public search: string | null = '';
+  public currentPage: number = 0;
   public list: any = [];
 
   constructor(private route: ActivatedRoute, private router: Router, private service: ArtworksService) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.currentPage = params['page'];
+      }
+    );
     this.loading = true;
     this.router.events.subscribe(() => {
       this.search = this.route.snapshot.paramMap.get('search');
-      this.service.getSearchResults(this.search).subscribe(res => {this.list = res; this.loading = false;});
+      this.service.getSearchResults(this.search, this.currentPage).subscribe(res => {this.list = res; this.loading = false; console.log(res);
+       });
     });    
   }
 
@@ -33,6 +39,13 @@ export class ResultsComponent {
       this.search = search;
       this.loading = false 
     });
+  }
+
+  goToPage(page: number) {
+    const queryParams = {
+      page
+    }
+    this.router.navigate([`/search/${this.search}`], { queryParams })
   }
 
   goToArtwork(id: number) {

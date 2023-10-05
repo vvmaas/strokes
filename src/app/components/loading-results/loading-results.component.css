@@ -7,9 +7,8 @@
     overflow: scroll;
 }
 
-.card {
+.card1, .card2, .card3, .card4 {
     width: 23%;
-    height: 35vh;
     margin-top: 25px;
     background-color: rgba(244,215,175, 0.8);
     border-radius: 2px;
@@ -18,6 +17,22 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+.card1 {
+    height: 35vh;
+}
+
+.card2 {
+    height: 40vh;
+}
+
+.card3 {
+    height: 45vh;
+}
+
+.card4 {
+    height: 30vh;
 }
 
 .title {
