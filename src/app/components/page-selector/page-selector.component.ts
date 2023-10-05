@@ -22,7 +22,8 @@ export class PageSelectorComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      this.buildArr()
+    if(this.pageTotal > 25) this.pageTotal = 25;
+    this.buildArr()
   }
 
   goToPage(page: number) {
