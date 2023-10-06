@@ -44,3 +44,15 @@
 .page:active, .selected:active {
     background-color: rgba(255, 230, 195, 0.70);
 }
+
+@media(max-width: 800px) {
+    .fill, .selected, .page {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    .selected {
+        border-top: 5.8px solid rgba(254, 192, 79, 0.95);
+        padding-bottom: 5.8px;
+    }
+}

@@ -6,7 +6,7 @@
     top: 0;
     right: 0;
     z-index: 7;
-    height: 10vh;
+    height: 90px;
     width: 100%;
     background-color: rgba(64, 40, 36, .8);
     backdrop-filter: blur(2px);
@@ -35,4 +35,25 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
+}
+
+@media(max-width: 1600px) {
+    .container {
+        width: 95vw;
+    }
+}
+
+@media(max-width: 800px) {
+    .wrapper {
+        height: 80px;
+    }
+}
+
+@media(max-width: 600px) {
+    .wrapper {
+        height: 70px;
+    }
+    .logo {
+        display: none;
+    }
 }

@@ -31,3 +31,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@media(max-width:800px) {
+    .wrapper {
+        width: 95vw;
+    }
+    .logo {
+        height: 100px;
+        line-height: 0.9;
+        font-size: max(48px, 10vw);
+        margin-bottom: 1vw;
+    }
+}

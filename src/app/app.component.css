@@ -6,3 +6,9 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+@media(max-width: 1600px) {
+    main {
+        width: 95vw;
+    }
+}
