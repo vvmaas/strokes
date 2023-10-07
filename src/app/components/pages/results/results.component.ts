@@ -24,7 +24,7 @@ export class ResultsComponent {
   constructor(private route: ActivatedRoute, private router: Router, private service: ArtworksService, private location: Location) { }
 
   ngOnInit(): void {
-    console.log('init');
+    this.scrollToTop();
     this.route.queryParams.subscribe((params) => {
       this.currentPage = params['page'];
       }
