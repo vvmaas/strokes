@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./page-selector.component.css']
 })
 export class PageSelectorComponent implements OnChanges {
-  @Input() search: string | null = '';
+  @Output() newPage = new EventEmitter<number>();
   @Input() page: number = 0;
   @Input() pageTotal: number = 0;
 
@@ -27,10 +27,7 @@ export class PageSelectorComponent implements OnChanges {
   }
 
   goToPage(page: number) {
-    const queryParams = {
-      page
-    }
-    this.router.navigate([`/search/${this.search}`], { queryParams })
+    this.newPage.emit(page)
   }
 
   buildArr() {

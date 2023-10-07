@@ -1,5 +1,5 @@
 <div class="container">
-    <app-topbar (newSearch)="refetch($event)"></app-topbar>
+    <app-topbar [environment]="'results'" (newSearch)="refetch($event)"></app-topbar>
     <app-no-results *ngIf="noResults" class="no-results"></app-no-results>
     <div *ngIf="!noResults" class="keyword">
         showing search results for: <strong>{{this.search}}</strong>
@@ -10,5 +10,5 @@
             <app-result-card [item]="item" [config]="list.config" (click)="goToArtwork(item.id)"></app-result-card>
         </div>
     </div>
-    <app-page-selector class="page-selector" *ngIf="list.pagination" [search]="search" [page]="currentPage" [pageTotal]="list.pagination.total_pages"></app-page-selector>
+    <app-page-selector class="page-selector" *ngIf="list.pagination" (newPage)="refetch(this.search, $event)" [page]="currentPage" [pageTotal]="list.pagination.total_pages"></app-page-selector>
 </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Artwork } from '../models/Artwork';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,7 +20,10 @@ export class ArtworksService {
   }
 
   getSearchResults(keyword: string | null, page: number = 1): Observable<any> {
+    const headers = new HttpHeaders()
+      .set('Cache-Control', 'max-age=0');
+
     const url = `${this.baseApiUrl}/search?q=${keyword}&${this.searchFilters}&page=${page}`
-    return this.http.get<Artwork[]>(url);
+    return this.http.get<Artwork[]>(url, { headers });
   }
 }

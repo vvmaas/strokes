@@ -1,7 +1,7 @@
 import { Thumbnail } from "./Thumbnail"
 
 export interface Artwork {
-    id?: number,
+    id: number,
     title?: string,
     artist_title?: string,
     description?: string | null, 

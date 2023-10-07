@@ -1,4 +1,4 @@
-<app-topbar></app-topbar>
+<app-topbar [environment]="'artwork'"></app-topbar>
 <div class="body">
     <mat-icon class="return-icon" (click)="goBack()">arrow_back</mat-icon>
     <app-loading-artwork *ngIf="!item"></app-loading-artwork>

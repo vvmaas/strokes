@@ -27,11 +27,12 @@ export class SearchbarComponent {
     if(this.search == '') {
       return alert("Please insert text.")
     }
-
-    const queryParams = {
-      page: 1
+    if(this.environment !== 'results') {
+      const queryParams = {
+        page: 1
+      }
+      this.router.navigate([`/search/${this.search}`], { queryParams })
     }
-    this.router.navigate([`/search/${this.search}`], { queryParams })
     this.newSearch.emit(this.search)
     this.applyForm.reset();
   }

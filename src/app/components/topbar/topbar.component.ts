@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 })
 export class TopbarComponent {
   @Output() newSearch = new EventEmitter<string>();
-
-  public environment: string = 'topbar';
+  @Input() environment: string = ''; 
   
   constructor(private router: Router) {  }
 
