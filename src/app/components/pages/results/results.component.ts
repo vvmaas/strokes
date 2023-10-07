@@ -46,8 +46,8 @@ export class ResultsComponent {
   }
 
   refetch(search: string | null, page: number = 1) {
+    this.scrollToTop();
     this.loading = true;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.noResults = false;
     this.search = search;
     this.currentPage = page;
@@ -57,6 +57,16 @@ export class ResultsComponent {
         next: (v) => {this.list = v; if(!v.data[0]) { this.noResults = true } else { this.noResults = false }; this.loading = false;},
         error: (e) => {this.noResults = true; this.loading = false;}
       })
+  }
+
+  scrollToTop(){
+    const userAgent = navigator.userAgent;
+
+    if (userAgent.includes('Chrome')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0 });
+    }
   }
 
   goToArtwork(id: number) {
