@@ -27,7 +27,13 @@ export class PageSelectorComponent implements OnChanges {
   }
 
   goToPage(page: number) {
+    if(this.checkPage(page)) return;
     this.newPage.emit(page)
+  }
+
+  checkPage(page: number) {
+    if(page < 1 || page > this.pageTotal) return true;
+    return false;
   }
 
   buildArr() {
@@ -56,5 +62,9 @@ export class PageSelectorComponent implements OnChanges {
 
   lastItem(arr: any[]) {
     return arr[arr.length - 1]
+  }
+
+  toNumber(number: number) {
+    return Number(number)
   }
 }

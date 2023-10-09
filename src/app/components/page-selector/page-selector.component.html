@@ -11,4 +11,15 @@
         </div>
     </div>
 </div>
+<div *ngIf="pageTotal > 1" class="container-mobile">
+        <div class="change-page prev-page" [ngClass]="{disabled: page == 1}" (click)="goToPage(page-1)">
+            <
+        </div>
+        <div class="page-mobile">
+            Page {{page}}
+        </div>
+        <div class="change-page next-page"  [ngClass]="{disabled: page == pageTotal}" (click)="goToPage(toNumber(page)+1)">
+            >
+        </div>
+</div>
 

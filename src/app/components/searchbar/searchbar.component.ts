@@ -36,5 +36,4 @@ export class SearchbarComponent {
     this.newSearch.emit(this.search)
     this.applyForm.reset();
   }
-
 }

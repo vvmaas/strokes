@@ -30,6 +30,7 @@ export class ResultsComponent {
       }
     );
     this.loading = true;
+    if(!this.checkPage()) return;
     this.fetch();
   }
 
@@ -60,13 +61,16 @@ export class ResultsComponent {
   }
 
   scrollToTop(){
-    const userAgent = navigator.userAgent;
+    window.scrollTo({ top: 0 });
+  }
 
-    if (userAgent.includes('Chrome')) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 0 });
+  checkPage() {
+    if(this.currentPage<1) {
+      this.loading = false;
+      this.noResults = true;
+      return false;
     }
+    return true;
   }
 
   goToArtwork(id: number) {
