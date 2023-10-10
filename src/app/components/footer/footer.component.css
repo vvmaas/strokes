@@ -1,0 +1,40 @@
+.wrapper {
+    width: 300px;
+    margin: 0 auto;
+    background-color: rgba(50, 31, 28, 0.795);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    min-height: 30px;
+    border-radius: 4px 4px 0 0 ;
+}
+
+p {
+    color: rgba(244, 215, 175, 0.9);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+a {
+    color: rgba(254, 192, 79, 0.9);
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: rgba(254, 192, 79, 0.85);
+}
+
+a:active {
+    color: rgba(254, 192, 79, 0.75);
+}
+
+@media(max-width: 600px) {
+    .wrapper {
+        width: 95vw;
+    }
+}

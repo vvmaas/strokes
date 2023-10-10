@@ -16,7 +16,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { LoadingArtworkComponent } from './components/loading-artwork/loading-artwork.component';
 import { LoadingResultsComponent } from './components/loading-results/loading-results.component';
 import { PageSelectorComponent } from './components/page-selector/page-selector.component';
-import { NoResultsComponent } from './components/no-results/no-results.component'; 
+import { NoResultsComponent } from './components/no-results/no-results.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NoResultsComponent } from './components/no-results/no-results.component
     LoadingArtworkComponent,
     LoadingResultsComponent,
     PageSelectorComponent,
-    NoResultsComponent
+    NoResultsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
