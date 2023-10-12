@@ -47,6 +47,12 @@ export class PageSelectorComponent implements OnChanges {
         this.pages.push({ page: i, class: 'page' })
         continue
       }
+      if(i==3 || i==(this.pageTotal-2)){
+        if(i <= Number(this.page) + this.range+1 && i >= this.page-this.range-1) {
+          this.pages.push({ page: i, class: 'page' })
+          continue
+        }
+      }
       if(i <= Number(this.page) + this.range && i >= this.page-this.range) {
         this.pages.push({ page: i, class: 'page' })
         continue
