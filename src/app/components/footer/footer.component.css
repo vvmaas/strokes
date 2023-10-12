@@ -3,18 +3,19 @@
     margin: 0 auto;
     background-color: rgba(50, 31, 28, 0.795);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 6vh;
-    min-height: 30px;
+    height: 7.5vh;
+    min-height: 50px;
     border-radius: 4px 4px 0 0 ;
 }
 
 p {
     color: rgba(244, 215, 175, 0.9);
     font-weight: 400;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 17px;
+    line-height: 19px;
 }
 
 a {
@@ -36,5 +37,7 @@ a:active {
 @media(max-width: 600px) {
     .wrapper {
         width: 95vw;
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
