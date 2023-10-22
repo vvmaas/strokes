@@ -37,6 +37,11 @@
     cursor: pointer;
 }
 
+.hide_header {
+    top: -90px;
+    filter: opacity(0);
+}
+
 @media(max-width: 1600px) {
     .container {
         width: 95vw;

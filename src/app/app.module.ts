@@ -17,7 +17,8 @@ import { LoadingArtworkComponent } from './components/loading-artwork/loading-ar
 import { LoadingResultsComponent } from './components/loading-results/loading-results.component';
 import { PageSelectorComponent } from './components/page-selector/page-selector.component';
 import { NoResultsComponent } from './components/no-results/no-results.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component'; 
+import { ArtworkInfoComponent } from './components/artwork-info/artwork-info.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LoadingResultsComponent,
     PageSelectorComponent,
     NoResultsComponent,
-    FooterComponent
+    FooterComponent,
+    ArtworkInfoComponent
   ],
   imports: [
     BrowserModule,
