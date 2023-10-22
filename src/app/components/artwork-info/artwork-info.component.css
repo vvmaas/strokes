@@ -5,7 +5,7 @@
     background-color: rgb(21, 13, 12);
 }
 
-.title {
+.art-title {
     font-size: 2rem;
     line-height: 2rem;
     font-weight: 500;
@@ -23,7 +23,7 @@
     font-weight: 400;
 }
 
-.info {
+.art-info {
     width: 70%;
     margin: 0 auto;
     display: flex;

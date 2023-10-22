@@ -26,6 +26,8 @@ export class ArtworkComponent {
       this.id = this.route.snapshot.paramMap.get('id');
       this.service.getById(Number(this.id)).subscribe(res => {
         this.item = res.data; 
+        console.log(res.data);
+        
         this.config = res.config; 
         this.image = this.imageService.getImage(this.config, this.item);
       });

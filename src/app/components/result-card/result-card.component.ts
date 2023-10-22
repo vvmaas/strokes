@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { Artwork } from 'src/app/models/Artwork';
 import { ArtworkConfig } from 'src/app/models/ArtworkConfig';
 
