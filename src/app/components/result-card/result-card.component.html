@@ -1,5 +1,5 @@
 <div *ngIf="image !== ''" class="image">
-    <img src={{item?.thumbnail?.lqip}} alt={{item?.thumbnail?.alt_text}} srcset={{image}}>
+    <img src={{item?.thumbnail?.lqip}} srcset={{image}}>
 </div>
 <div *ngIf="image == ''" class="filler-img">
     <mat-icon class="filler-icon">no_photography</mat-icon>

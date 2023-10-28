@@ -10,7 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class ArtworksService {
   private baseApiUrl = environment.baseApiUrl;
-  private searchFilters = "fields=id,title,artist_title,description,date_display,main_reference_number,thumbnail,config,image_id&limit=40"
+  private searchLimit = 40;
+  private relatedLimit = 15;
+  private defaultFilter = `fields=id,title,artist_title,description,date_display,main_reference_number,thumbnail,config,image_id&limit=`
+  filter(type: string) {
+    if(type == 'search'){
+      return this.defaultFilter + this.searchLimit
+    } else {
+      return this.defaultFilter + this.relatedLimit
+    }
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +32,17 @@ export class ArtworksService {
     const headers = new HttpHeaders()
       .set('Cache-Control', 'max-age=0');
 
-    const url = `${this.baseApiUrl}/search?q=${keyword}&${this.searchFilters}&page=${page}`
+    const url = `${this.baseApiUrl}/search?q=${keyword}&${this.filter('search')}&page=${page}`
+    return this.http.get<Artwork[]>(url, { headers });
+  }
+
+  getRelatedResults(keyword: string | null, page: number = 1): Observable<any> {
+    const headers = new HttpHeaders()
+      .set('Cache-Control', 'max-age=0');
+
+    const url = `${this.baseApiUrl}/search?q=${keyword}&${this.filter('related')}&page=${page}`
     return this.http.get<Artwork[]>(url, { headers });
   }
 }
+
+

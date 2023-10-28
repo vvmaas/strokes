@@ -1,0 +1,15 @@
+div {
+    color: white;
+    display: flex ;
+}
+
+.related-card {
+    width: 23%;
+    height: fit-content;
+    margin-top: 30px;
+    background-color: rgb(244,215,175);
+    border-radius: 2px;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}

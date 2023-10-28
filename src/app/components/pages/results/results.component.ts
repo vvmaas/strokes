@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ArtworksService } from 'src/app/service/artworks.service';
 import { ArtworkList } from 'src/app/models/ArtworkList';
 import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-results',
@@ -21,6 +22,9 @@ export class ResultsComponent {
   };
   public noResults: boolean = false;
 
+  private routerSubscription: Subscription = new Subscription;
+  private searchSubscription: Subscription = new Subscription;
+
   constructor(private route: ActivatedRoute, private router: Router, private service: ArtworksService, private location: Location) { }
 
   ngOnInit(): void {
@@ -34,11 +38,16 @@ export class ResultsComponent {
     this.fetch();
   }
 
+  ngOnDestroy() {
+    this.searchSubscription.unsubscribe();
+    this.routerSubscription.unsubscribe();
+  }
+
   fetch(){
     console.log('fetch');
-    this.router.events.subscribe(() => {
+    this.routerSubscription = this.router.events.subscribe(() => {
       this.search = this.route.snapshot.paramMap.get('search');
-      this.service.getSearchResults(this.search, this.currentPage)
+      this.searchSubscription = this.service.getSearchResults(this.search, this.currentPage)
         .subscribe({
               next: (v) => {this.list = v; if(!v.data[0]) { this.noResults = true } else { this.noResults = false }; this.loading = false;},
               error: (e) => {this.noResults = true; this.loading = false;}

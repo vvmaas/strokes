@@ -19,6 +19,7 @@ import { PageSelectorComponent } from './components/page-selector/page-selector.
 import { NoResultsComponent } from './components/no-results/no-results.component';
 import { FooterComponent } from './components/footer/footer.component'; 
 import { ArtworkInfoComponent } from './components/artwork-info/artwork-info.component';
+import { RelatedArtsComponent } from './components/related-arts/related-arts.component';  
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ArtworkInfoComponent } from './components/artwork-info/artwork-info.com
     PageSelectorComponent,
     NoResultsComponent,
     FooterComponent,
-    ArtworkInfoComponent
+    ArtworkInfoComponent,
+    RelatedArtsComponent
   ],
   imports: [
     BrowserModule,
