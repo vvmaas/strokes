@@ -2,7 +2,7 @@
     background-color: rgb(52, 32, 29);
     border-radius: 10px;
     margin: 110px 0;
-    padding: 30px;
+    padding-top: 30px;
     padding-bottom: 60px;
 }
 
@@ -10,13 +10,14 @@
     width: fit-content;
     height: 25px; 
     margin: 1vh;
+    margin-left: 30px;
     font-size: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgb(254, 192, 79);
     cursor: pointer;
-    filter: drop-shadow(-5px -5px 3px #00000025);
+    filter: opacity(0);
 }
 
 .return-icon:hover {
@@ -44,5 +45,18 @@
     }
     .image-space {
         height: calc(98vh - 130px);
+    }
+    .return-icon {
+        width: fit-content;
+        height: 25px; 
+        margin: 1vh;
+        margin-left: 30px;
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(254, 192, 79);
+        cursor: pointer;
+        filter: drop-shadow(-5px -5px 3px #00000025);
     }
 }

@@ -81,8 +81,4 @@ export class ResultsComponent {
     }
     return true;
   }
-
-  goToArtwork(id: number) {
-    this.router.navigate([`/artwork/${id}`])
-  }
 }

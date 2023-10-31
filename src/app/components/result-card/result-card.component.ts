@@ -20,6 +20,5 @@ export class ResultCardComponent {
 
   ngOnInit(): void {
     this.image = this.service.getImage(this.config, this.item)
-    console.log(this.image);
   }
 }

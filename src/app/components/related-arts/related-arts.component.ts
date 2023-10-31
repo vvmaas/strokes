@@ -39,6 +39,8 @@ export class RelatedArtsComponent {
   }
 
   goToArtwork(id: number) {
+    this.item = null;
+    this.subscription.unsubscribe();
     this.router.navigate([`/artwork/${id}`])
   }
 }

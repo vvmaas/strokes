@@ -7,7 +7,7 @@
     <app-loading-results *ngIf="loading"></app-loading-results>
     <div *ngIf="!loading" class="results-list">
         <div *ngFor="let item of list.data" class="result-card">
-            <app-result-card [item]="item" [config]="list.config" (click)="goToArtwork(item.id)"></app-result-card>
+            <app-result-card [item]="item" [config]="list.config"></app-result-card>
         </div>
     </div>
     <app-page-selector class="page-selector" *ngIf="list.pagination" (newPage)="refetch(this.search, $event)" [page]="currentPage" [pageTotal]="list.pagination.total_pages"></app-page-selector>

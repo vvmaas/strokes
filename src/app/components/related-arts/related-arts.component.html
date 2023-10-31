@@ -3,9 +3,6 @@
         <app-result-card [item]="item" [config]="related_artist.config" (click)="goToArtwork(item.id)"></app-result-card>
     </div>
 </div>
-<div *ngIf="this.item.date_display" class="related-date">
-    {{this.item.date_display}}
-</div>
 <div *ngIf="this.item.style_title" class="related-style">
     {{this.item.style_title}}
 </div>

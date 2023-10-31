@@ -1,14 +1,15 @@
-<div *ngIf="image !== ''" class="image">
-    <img src={{item?.thumbnail?.lqip}} srcset={{image}}>
-</div>
-<div *ngIf="image == ''" class="filler-img">
-    <mat-icon class="filler-icon">no_photography</mat-icon>
-</div>
-<div class="info">
-    <p *ngIf="item?.date_display" class="title">{{item?.title}}, {{item?.date_display}}</p>
-    <p *ngIf="!item?.date_display" class="title">{{item?.title}}</p>
-    <p *ngIf="item?.artist_title" [innerHtml]="item?.artist_title" class="author"></p>
-</div>
-
+<a routerLink="/artwork/{{item?.id}}">
+    <div *ngIf="image !== ''" class="image">
+        <img src={{item?.thumbnail?.lqip}} srcset={{image}}>
+    </div>
+    <div *ngIf="image == ''" class="filler-img">
+        <mat-icon class="filler-icon">no_photography</mat-icon>
+    </div>
+    <div class="info">
+        <p *ngIf="item?.date_display" class="title">{{item?.title}}, {{item?.date_display}}</p>
+        <p *ngIf="!item?.date_display" class="title">{{item?.title}}</p>
+        <p *ngIf="item?.artist_title" [innerHtml]="item?.artist_title" class="author"></p>
+    </div>
+</a>
 
 

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Location, DOCUMENT } from '@angular/common';
 
 import { ArtworksService } from 'src/app/service/artworks.service';
 import { ImagesService } from 'src/app/service/images.service';
@@ -30,7 +30,6 @@ export class ArtworkComponent {
       console.log(this.id);
       this.artworkSubscription = this.service.getById(Number(this.id)).subscribe(res => {
         this.item = res.data; 
-        console.log(res.data);
         
         this.config = res.config; 
         this.image = this.imageService.getImage(this.config, this.item);
@@ -44,6 +43,8 @@ export class ArtworkComponent {
   }
 
   goBack() {
+    this.artworkSubscription.unsubscribe();
+    this.routerSubscription.unsubscribe();
     this._location.back();
   }
 }

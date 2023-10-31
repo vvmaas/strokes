@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class ArtworksService {
   private baseApiUrl = environment.baseApiUrl;
   private searchLimit = 40;
-  private relatedLimit = 15;
+  private relatedLimit = 7;
   private defaultFilter = `fields=id,title,artist_title,description,date_display,main_reference_number,thumbnail,config,image_id&limit=`
   filter(type: string) {
     if(type == 'search'){

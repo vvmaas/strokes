@@ -1,15 +1,30 @@
 div {
     color: white;
-    display: flex ;
+}
+
+.related-artist {
+    overflow: scroll;
+    display: flex;
+    padding: 30px;
 }
 
 .related-card {
-    width: 23%;
+    min-width: 300px;
     height: fit-content;
+    margin-right: 15px;
+    margin-left: 15px;
     margin-top: 30px;
     background-color: rgb(244,215,175);
     border-radius: 2px;
     padding: 20px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.related-card:hover {
+    filter: opacity(0.8);
+    filter: brightness(1.01);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.381));
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
